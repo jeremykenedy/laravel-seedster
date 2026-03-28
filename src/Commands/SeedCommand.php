@@ -29,7 +29,7 @@ class SeedCommand extends Command
 
     public function handle(): int
     {
-        if (! $this->confirmToProceed()) {
+        if (!$this->confirmToProceed()) {
             return 1;
         }
 
@@ -52,10 +52,10 @@ class SeedCommand extends Command
     protected function getSeeder(string $class): \Illuminate\Database\Seeder
     {
         if (strpos($class, '\\') === false) {
-            $class = 'Database\\Seeders\\' . $class;
+            $class = 'Database\\Seeders\\'.$class;
         }
 
-        if ($class === 'Database\\Seeders\\DatabaseSeeder' && ! class_exists($class)) {
+        if ($class === 'Database\\Seeders\\DatabaseSeeder' && !class_exists($class)) {
             $class = 'DatabaseSeeder';
         }
 
