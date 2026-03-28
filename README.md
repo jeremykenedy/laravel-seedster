@@ -4,6 +4,11 @@ A drop-in replacement for [eklundkristoffer/seedster](https://github.com/eklundk
 
 Seedster provides an Artisan command to generate database seeders from existing database records, making it easy to capture the current state of your database as seed files.
 
+[![Total Downloads](https://poser.pugx.org/jeremykenedy/laravel-seedster/d/total.svg)](https://packagist.org/packages/jeremykenedy/laravel-seedster)
+[![Latest Stable Version](https://poser.pugx.org/jeremykenedy/laravel-seedster/v/stable.svg)](https://packagist.org/packages/jeremykenedy/laravel-seedster)
+[![StyleCI](https://github.styleci.io/repos/1194804109/shield?branch=main)](https://github.styleci.io/repos/1194804109?branch=main)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 #### Table of Contents
 - [Features](#features)
 - [Installation](#installation)
