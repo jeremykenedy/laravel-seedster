@@ -117,15 +117,24 @@ it('says nothing about package seeders when none are registered', function (): v
         ->assertExitCode(0);
 });
 
-it('leaves the default connection alone after seeding another connection', function (): void {
-    app('seed.handler')->register(FirstSeeder::class);
+it('seeds the connection named by the database option and leaves the default alone', function (): void {
+    foreach (['testing', 'secondary'] as $connection) {
+        Schema::connection($connection)->create('posts', function ($table): void {
+            $table->increments('id');
+            $table->string('title');
+        });
+    }
+
+    app('seed.handler')->register(PostsTableSeeder::class);
 
     $this->artisan('db:seed', [
         '--class'    => RootSeeder::class,
         '--database' => 'secondary',
     ])->assertExitCode(0);
 
-    expect(DB::getDefaultConnection())->toBe('testing');
+    expect(DB::connection('secondary')->table('posts')->count())->toBe(1)
+        ->and(DB::connection('testing')->table('posts')->count())->toBe(0)
+        ->and(DB::getDefaultConnection())->toBe('testing');
 });
 
 it('lets a package register its seeders while the handler is being resolved', function (): void {

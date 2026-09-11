@@ -93,6 +93,8 @@ When `db:seed` runs, the replacement resolves the root seeder the way Laravel al
 
 Because the command is a subclass of `Illuminate\Database\Console\Seeds\SeedCommand`, everything the framework command does still applies: the production confirmation, the `--force` bypass, unguarded models during seeding, and restoring the previous default connection after seeding a different one.
 
+One framework caveat carries through with it. Only Laravel 13 restores that connection when a seeder throws; on Laravel 9 through 12 the restore sits after the call rather than in a `finally`, so a failed seed leaves `--database` in effect for the rest of the process. That is how `db:seed` behaves on those versions with or without this package.
+
 When no package has registered anything, `db:seed` behaves exactly like the framework command.
 
 ## Artisan Commands
