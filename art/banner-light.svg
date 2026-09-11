@@ -1,0 +1,33 @@
+<svg fill="none" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+    <rect fill="#fff" height="200" rx="16" width="800"/>
+    <rect fill="none" height="200" rx="16" stroke="#e5e7eb" width="800"/>
+
+    <!-- Seeded database illustration -->
+    <g transform="translate(585 38)">
+        <path d="M75 52 L75 8" stroke="#15803d" stroke-width="3" stroke-linecap="round"/>
+        <path d="M75 34 C 58 34 48 24 50 10 C 66 12 74 22 75 34 Z" fill="#22c55e"/>
+        <path d="M75 44 C 92 44 102 34 100 20 C 84 22 76 32 75 44 Z" fill="#4ade80"/>
+        <path d="M17 52 L17 100 A58 14 0 0 0 133 100 L133 52 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+        <ellipse cx="75" cy="52" rx="58" ry="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+        <rect x="42" y="70" width="66" height="5" rx="2.5" fill="#94a3b8"/>
+        <rect x="42" y="86" width="48" height="5" rx="2.5" fill="#94a3b8"/>
+    </g>
+
+    <!-- Title -->
+    <text fill="#0f172a" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="40" font-weight="700" letter-spacing="-.5" x="60" y="80">Laravel Seedster</text>
+    <text fill="#64748b" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" letter-spacing=".3" x="60" y="108">Register and run database seeds from your Laravel packages</text>
+
+    <!-- Feature pills -->
+    <g transform="translate(60 128)">
+        <rect fill="#fef2f2" height="22" rx="11" stroke="#ef4444" stroke-width=".8" width="62"/>
+        <text fill="#b91c1c" font-family="system-ui, sans-serif" font-size="10" font-weight="500" text-anchor="middle" x="31" y="15">db:seed</text>
+        <rect fill="#f0fdf4" height="22" rx="11" stroke="#22c55e" stroke-width=".8" width="100" x="70"/>
+        <text fill="#166534" font-family="system-ui, sans-serif" font-size="10" font-weight="500" text-anchor="middle" x="120" y="15">Package Seeders</text>
+        <rect fill="#eff6ff" height="22" rx="11" stroke="#3b82f6" stroke-width=".8" width="92" x="178"/>
+        <text fill="#1e40af" font-family="system-ui, sans-serif" font-size="10" font-weight="500" text-anchor="middle" x="224" y="15">Laravel 9 to 13</text>
+        <rect fill="#f5f3ff" height="22" rx="11" stroke="#8b5cf6" stroke-width=".8" width="78" x="278"/>
+        <text fill="#6d28d9" font-family="system-ui, sans-serif" font-size="10" font-weight="500" text-anchor="middle" x="317" y="15">Zero Config</text>
+        <rect fill="#fffbeb" height="22" rx="11" stroke="#f59e0b" stroke-width=".8" width="62" x="364"/>
+        <text fill="#b45309" font-family="system-ui, sans-serif" font-size="10" font-weight="500" text-anchor="middle" x="395" y="15">Drop-in</text>
+    </g>
+</svg>

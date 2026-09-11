@@ -1,5 +1,10 @@
 <?php
 
-use Jeremykenedy\Seedster\Tests\TestCase;
+declare(strict_types=1);
 
-uses(TestCase::class)->in('Feature', 'Unit');
+use Jeremykenedy\LaravelSeedster\Tests\Fixtures\SeederLog;
+use Jeremykenedy\LaravelSeedster\Tests\TestCase;
+
+uses(TestCase::class)
+    ->beforeEach(fn () => SeederLog::reset())
+    ->in('Feature', 'Unit');
