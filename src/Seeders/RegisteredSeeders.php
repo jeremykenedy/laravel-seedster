@@ -12,7 +12,7 @@ use Illuminate\Database\Seeder;
 class RegisteredSeeders extends Seeder
 {
     /**
-     * @param array<int, string> $registered
+     * @param array<int, string>   $registered
      * @param class-string<Seeder> $root
      */
     public function __construct(protected array $registered, protected string $root)

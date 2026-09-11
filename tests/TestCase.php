@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace Jeremykenedy\LaravelSeedster\Tests;
 
+use Illuminate\Foundation\Application;
 use Jeremykenedy\LaravelSeedster\Providers\SeedsterServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Illuminate\Foundation\Application;
 
 abstract class TestCase extends Orchestra
 {
     /**
-     * @param  Application  $app
+     * @param Application $app
+     *
      * @return array<int, class-string>
      */
     protected function getPackageProviders($app): array
@@ -20,7 +21,7 @@ abstract class TestCase extends Orchestra
     }
 
     /**
-     * @param  Application  $app
+     * @param Application $app
      */
     protected function defineEnvironment($app): void
     {
