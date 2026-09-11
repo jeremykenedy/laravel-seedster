@@ -2,7 +2,12 @@
     "name": "jeremykenedy/laravel-seedster",
     "description": "Register and run Laravel database seeds from packages. Fork of eklundkristoffer/seedster with Laravel 13+ support.",
     "license": "MIT",
-    "keywords": ["laravel", "seed", "seeder", "package"],
+    "keywords": [
+        "laravel",
+        "seed",
+        "seeder",
+        "package"
+    ],
     "authors": [
         {
             "name": "Jeremy Kenedy",
@@ -34,7 +39,10 @@
     "autoload-dev": {
         "psr-4": {
             "Jeremykenedy\\LaravelSeedster\\Tests\\": "tests/"
-        }
+        },
+        "files": [
+            "tests/Fixtures/global_database_seeder.php"
+        ]
     },
     "scripts": {
         "test": "pest",

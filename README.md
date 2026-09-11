@@ -126,9 +126,13 @@ Registered seeders report through the standard Laravel seeder output, with a lin
 
   Mypackage\Database\Seeders\PostsTableSeeder ................. RUNNING
   Mypackage\Database\Seeders\PostsTableSeeder ................ 2 ms DONE
+
+  Database\Seeders\DatabaseSeeder ............................ RUNNING
+  Database\Seeders\DatabaseSeeder ........................... 1 ms DONE
 ```
 
-The root seeder reports after those, the same way it always has.
+Every seeder that runs is named, the root one included. When nothing is
+registered the output is byte for byte what the framework prints.
 
 ## Translations
 

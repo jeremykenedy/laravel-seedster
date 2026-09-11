@@ -28,7 +28,7 @@ class SeedCommand extends BaseSeedCommand
             trans_choice('seedster::seedster.registered', count($registered))
         );
 
-        return (new RegisteredSeeders($registered, $root))
+        return (new RegisteredSeeders($registered, get_class($root)))
             ->setContainer($this->laravel)
             ->setCommand($this);
     }
