@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Jeremykenedy\LaravelSeedster\Tests\Fixtures\CountingRootSeeder;
 use Jeremykenedy\LaravelSeedster\Tests\Fixtures\FirstSeeder;
 use Jeremykenedy\LaravelSeedster\Tests\Fixtures\PostsTableSeeder;
 use Jeremykenedy\LaravelSeedster\Tests\Fixtures\RootSeeder;
@@ -71,6 +72,21 @@ it('resolves a registered short name to the global database seeder when there is
     $this->artisan('db:seed', ['--class' => RootSeeder::class])->assertExitCode(0);
 
     expect(SeederLog::$ran)->toBe(['DatabaseSeeder', RootSeeder::class]);
+});
+
+it('builds the root seeder once', function (): void {
+    app('seed.handler')->register(FirstSeeder::class);
+
+    $this->artisan('db:seed', ['--class' => CountingRootSeeder::class])->assertExitCode(0);
+
+    expect(CountingRootSeeder::$constructed)->toBe(1)
+        ->and(SeederLog::$ran)->toBe([FirstSeeder::class, CountingRootSeeder::class]);
+});
+
+it('builds the root seeder once when nothing is registered', function (): void {
+    $this->artisan('db:seed', ['--class' => CountingRootSeeder::class])->assertExitCode(0);
+
+    expect(CountingRootSeeder::$constructed)->toBe(1);
 });
 
 it('reports the root seeder by name alongside the registered ones', function (): void {

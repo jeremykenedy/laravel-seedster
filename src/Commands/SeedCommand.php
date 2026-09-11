@@ -16,19 +16,17 @@ class SeedCommand extends BaseSeedCommand
 {
     protected function getSeeder(): Seeder
     {
-        $root = parent::getSeeder();
-
         $registered = $this->registeredSeeders();
 
         if ($registered === []) {
-            return $root;
+            return parent::getSeeder();
         }
 
         $this->components->info(
             trans_choice('seedster::seedster.registered', count($registered))
         );
 
-        return (new RegisteredSeeders($registered, get_class($root)))
+        return (new RegisteredSeeders($registered, $this->rootSeeder()))
             ->setContainer($this->laravel)
             ->setCommand($this);
     }
@@ -39,5 +37,14 @@ class SeedCommand extends BaseSeedCommand
     protected function registeredSeeders(): array
     {
         return $this->laravel['seed.handler']->seeders()->all();
+    }
+
+    /**
+     * The root seeder is named rather than resolved here so that it is built
+     * once, by the same call that runs it.
+     */
+    protected function rootSeeder(): string
+    {
+        return $this->input->getArgument('class') ?? $this->input->getOption('class');
     }
 }

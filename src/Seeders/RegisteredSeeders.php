@@ -12,8 +12,7 @@ use Illuminate\Database\Seeder;
 class RegisteredSeeders extends Seeder
 {
     /**
-     * @param array<int, string>   $registered
-     * @param class-string<Seeder> $root
+     * @param array<int, string> $registered
      */
     public function __construct(protected array $registered, protected string $root)
     {
@@ -21,11 +20,9 @@ class RegisteredSeeders extends Seeder
 
     public function run(): void
     {
-        foreach ($this->registered as $seeder) {
+        foreach ([...$this->registered, $this->root] as $seeder) {
             $this->call($this->qualify($seeder));
         }
-
-        $this->call($this->root);
     }
 
     /**

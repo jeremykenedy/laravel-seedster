@@ -20,5 +20,6 @@ class SeederLog
     public static function reset(): void
     {
         static::$ran = [];
+        CountingRootSeeder::$constructed = 0;
     }
 }
