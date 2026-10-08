@@ -11,9 +11,6 @@ Let a Laravel package register its own database seeders and have them run<br>as 
 </p>
 
 <p align="center">
-    
-    
-    
     <a href="https://packagist.org/packages/jeremykenedy/laravel-seedster"><img src="https://poser.pugx.org/jeremykenedy/laravel-seedster/d/total.svg" alt="Total Downloads"></a>
     <a href="https://packagist.org/packages/jeremykenedy/laravel-seedster"><img src="https://poser.pugx.org/jeremykenedy/laravel-seedster/v/stable.svg" alt="Latest Stable Version"></a>
     <a href="https://github.com/jeremykenedy/laravel-seedster/actions"><img src="https://github.com/jeremykenedy/laravel-seedster/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
